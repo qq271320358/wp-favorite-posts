@@ -370,7 +370,7 @@ function wpfp_update_user_meta($arr) {
 }
 
 function wpfp_update_post_meta($post_id, $val) {
-	$oldval = wpfp_get_post_meta($post_id);
+	$oldval = (int)wpfp_get_post_meta($post_id);
 	if ($val == -1 && $oldval == 0) {
     	$val = 0;
 	} else {

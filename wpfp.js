@@ -11,6 +11,7 @@ jQuery(document).ready( function($) {
 });
 
 function wpfp_do_js( dhis, doAjax ) {
+    dhis.hide()
     loadingImg = dhis.prev();
     loadingImg.show();
     beforeImg = dhis.prev().prev();
