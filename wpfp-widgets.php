@@ -74,8 +74,8 @@ function wpfp_widget_init() {
             $options['uf_widget_limit'] = strip_tags(stripslashes($_POST['wpfp-uf-limit']));
             update_option("wpfp_options", $options);
         endif;
-        $uf_title = $options['uf_widget_title'];
-        $uf_limit = $options['uf_widget_limit'];
+        $uf_title = $options['uf_widget_title'] ?? null;
+        $uf_limit = $options['uf_widget_limit'] ?? null;
     ?>
         <p>
             <label for="wpfp-uf-title">
