@@ -117,8 +117,10 @@ function wpfp_die_or_go($str) {
     global $ajax_mode;
     if ($ajax_mode):
         die($str);
+    elseif (isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], home_url()) === 0 ):
+        wp_redirect($_SERVER['HTTP_REFERER']);
     else:
-        isset($_SERVER['HTTP_REFERER']) ? wp_redirect($_SERVER['HTTP_REFERER']) : wp_redirect(home_url());
+        wp_redirect(home_url());
     endif;
 }
 
